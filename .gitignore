@@ -1,0 +1,4 @@
+node_modules/
+guest.txt
+.git/
+.DS_Store
