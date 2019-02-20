@@ -10,5 +10,5 @@ app.get('/guests', (req, res) => {
   res.redirect('success.html');
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
