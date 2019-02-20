@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AresserA</title>
+    <link rel="stylesheet" href="bulma.min.css">
+    <script src="nav.js" type="text/javascript"> </script>
+    <style>
+      .hidden { display: none; }
+      .off { opacity: 0.2; }
+      div.select { width: 100% }
+      div.select select { border:none;box-shadow:none;border-radius:0;border-bottom:1px solid #666;width:100% }
+      div.select select:focus { border:none;box-shadow:none;border-radius:0;border-bottom:1px solid #666;width:100% }
+      input.input { border:none;box-shadow:none;border-radius:0;border-bottom:1px solid #666; }
+      input.input:focus { border:none;box-shadow:none;border-radius:0;border-bottom:1px solid #666; }
+      div.content { margin-left:auto;margin-right:auto;padding-left:10vw; padding-right:10vw; max-width: 700px}
+    </style>
+  </head>
+  <body class="has-navbar-fixed-top">
+
+  <!-- Nav bar -->
+  <nav class="navbar is-fixed-top" style="background:rgba(245,245,245,0.95)" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a href="index.html" class="navbar-item" style="letter-spacing:2px;font-weight:200">
+        ARESSERA
+      </a>
+      <a role="button" id="toggle" class="navbar-burger" onclick="toggle()" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="menu" class="navbar-menu">
+      <div class="navbar-end">
+        <a href="index.html" class="navbar-item"> 首页 </a>
+        <a href="info.html" class="navbar-item"> 时间地点 </a>
+        <a href="menu.html" class="navbar-item"> 选择菜单 </a>
+        <a href="seat.html" class="navbar-item"> 座位图 </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menu -->
+  <section class="section">
+    <div class="container has-text-centered">
+      <h1 class="title is-1" style="margin-bottom:0px">∞</h1>
+      <h1 class="title">Welcome!</h1>
+      <p class="subtitle is-6">
+        欢迎参加AresserA的婚礼，婚宴为西餐位上制。
+        <br/>
+        请浏览以下菜单，并提交您的选择。
+      </p>
+      <br/> <br/>
+
+      <!-- STARTER -->
+      <div class="content">
+        <p>
+          前菜
+          <br/>
+          STARTER
+        </p>
+        <br/>
+
+        <p>
+          <b> 意大利色拉 </b>
+          <br/>
+          <i> Italian Veggie Salad </i>
+        </p>
+
+        <p>
+          <b > 法式三文鱼鱼子酱</b>
+          <br/>
+          <i> French Salmon Fish Sauce </i>
+        </p>
+      </div>
+
+      <br/>
+      <div class="content" style="border-bottom:1px solid #ddd;margin-left:20vw;margin-right:20vw"></div>
+      <br/>
+
+      <!-- Main -->
+      <div class="content">
+        <p>
+          主菜
+          <br/>
+          ENTREES
+        </p>
+        <br/>
+
+        <p>
+          <b> 意大利色拉 </b>
+          <br/>
+          <i> Italian Veggie Salad </i>
+        </p>
+
+        <p> 或 / OR </p>
+
+        <p>
+          <b > 法式三文鱼鱼子酱</b>
+          <br/>
+          <i> French Salmon Fish Sauce </i>
+        </p>
+
+        <p> 或 / OR </p>
+
+        <p>
+          <b > 香煎小羊排</b>
+          <br/>
+          <i> Deep Fried Cooked Lamb</i>
+        </p>
+
+      </div>
+
+      <br/>
+      <div class="content" style="border-bottom:1px solid #ddd;margin-left:20vw;margin-right:20vw"></div>
+      <br/>
+
+      <!-- SOUP -->
+      <div class="content">
+        <p>
+          汤
+          <br/>
+          SOUP
+        </p>
+        <br/>
+
+        <p>
+          <b> 意大利色拉 </b>
+          <br/>
+          <i> Italian Veggie Salad </i>
+        </p>
+
+        <p> 或 / OR </p>
+
+        <p>
+          <b > 法式三文鱼鱼子酱</b>
+          <br/>
+          <i> French Salmon Fish Sauce </i>
+        </p>
+
+      </div>
+
+      <br/>
+      <div class="content" style="border-bottom:1px solid #ddd;margin-left:20vw;margin-right:20vw"></div>
+      <br/>
+
+      <p class="title is-6"> *请在3月1日前填写并递交以下表格* </p>
+
+      <form id="form" action="guests" method="get">
+
+        <!-- Number -->
+        <div class="content"  >
+          <div class="field">
+            <div class="select" style="width:100%">
+              <select name="number" onchange="selectNumber(this.value)">
+                <option disabled selected>先选择来宾位数</option>
+                <option value="1">1位</option> <option value="2">2位</option> <option value="3">3位</option>
+                <option value="4">4位</option> <option value="5">5位</option> <option value="6">6位</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <br/>
+
+        <!-- form1 -->
+        <div id="form1" class="content off"  >
+          <div class="field"> <label> 第一位来宾 </label> <input name="guest1" class="input" type="text" placeholder="输入姓名"> </div>
+          <div class="field"> <div class="select"> <select name="main1"> <option disabled selected>选主菜</option> <option>鸡肉</option> <option>猪肉</option> </select> </div> </div>
+          <div class="field"> <div class="select"> <select name="soup1"> <option disabled selected>选汤</option> <option>罗宋汤</option> <option>蘑菇汤</option> </select> </div> </div>
+          <br/>
+        </div>
+        <!-- form2 -->
+        <div id="form2" class="content hidden"  >
+          <div class="field"> <label> 第二位来宾 </label> <input class="input" type="text" placeholder="输入姓名"> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选主菜</option> <option>鸡肉</option> <option>猪肉</option> </select> </div> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选汤</option> <option>罗宋汤</option> <option>蘑菇汤</option> </select> </div> </div>
+          <br/>
+        </div>
+        <!-- form3 -->
+        <div id="form3" class="content hidden"  >
+          <div class="field"> <label> 第三位来宾 </label> <input class="input" type="text" placeholder="输入姓名"> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选主菜</option> <option>鸡肉</option> <option>猪肉</option> </select> </div> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选汤</option> <option>罗宋汤</option> <option>蘑菇汤</option> </select> </div> </div>
+          <br/>
+        </div>
+        <!-- form4 -->
+        <div id="form4" class="content hidden"  >
+          <div class="field"> <label> 第四位来宾 </label> <input class="input" type="text" placeholder="输入姓名"> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选主菜</option> <option>鸡肉</option> <option>猪肉</option> </select> </div> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选汤</option> <option>罗宋汤</option> <option>蘑菇汤</option> </select> </div> </div>
+          <br/>
+        </div>
+        <!-- form5 -->
+        <div id="form5" class="content hidden"  >
+          <div class="field"> <label> 第五位来宾 </label> <input class="input" type="text" placeholder="输入姓名"> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选主菜</option> <option>鸡肉</option> <option>猪肉</option> </select> </div> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选汤</option> <option>罗宋汤</option> <option>蘑菇汤</option> </select> </div> </div>
+          <br/>
+        </div>
+        <!-- form6 -->
+        <div id="form6" class="content hidden"  >
+          <div class="field"> <label> 第六位来宾 </label> <input class="input" type="text" placeholder="输入姓名"> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选主菜</option> <option>鸡肉</option> <option>猪肉</option> </select> </div> </div>
+          <div class="field"> <div class="select" style="width:100%"> <select> <option disabled selected>选汤</option> <option>罗宋汤</option> <option>蘑菇汤</option> </select> </div> </div>
+          <br/>
+        </div>
+
+
+        <!-- Special -->
+        <div id="special" class="content off">
+          <div class="field">
+            <label> 特殊要求(选填) </label>
+            <input name="special" class="input" type="text" placeholder="如小孩，老人，餐具。">
+          </div>
+          <br/>
+        </div>
+
+
+        <div id="submit" class="content off"  >
+          <button type="submit" form="form" class="button is-dark is-rounded is-fullwidth">确认递交</button>
+          <p class="is-size-7" style="margin-top:10px;opacity:0.5;"> 如有更改，可随时重新递交 </p>
+        </div>
+
+
+
+      </div>
+    </form>
+  </section>
+
+  <br/> <br/> <br/>
+
+  <script type="text/javascript">
+    function selectNumber(n) {
+      for (var i = 1; i <= 6; i++) {
+        document.getElementById('form' + i).className = 'content ' + (i > n ? 'hidden' : '');
+      }
+      document.getElementById('special').className = 'content';
+      document.getElementById('submit').className = 'content';
+    }
+
+  </script>
+
+  </body>
+</html>

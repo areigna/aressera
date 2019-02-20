@@ -2,9 +2,13 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(express.static('public'));
+
+app.get('/guests', (req, res) => {
+  console.log(req.query);
   fs.appendFileSync('guest.txt', JSON.stringify(req.query) + '\n');
-  res.redirect('http://localhost:8080/index.html');
+  res.redirect('success.html');
 });
 
-app.listen(3000, () => console.log(`Example app listening on port ${3000}!`));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AresserA</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <!--
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    -->
+    <link rel="stylesheet" href="bulma.min.css">
+    <script src="nav.js" type="text/javascript"> </script>
   </head>
   <body class="has-navbar-fixed-top">
 
@@ -17,23 +15,18 @@
       <a href="index.html" class="navbar-item" style="letter-spacing:2px;font-weight:200">
         ARESSERA
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <a role="button" id="toggle" class="navbar-burger" onclick="toggle()" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div id="navbarMenuHeroC" class="navbar-menu">
+    <div id="menu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item is-active"> 主页 </a>
-        <a class="navbar-item"> 菜单 </a>
-        <a class="navbar-item"> 座位图 </a>
-        <span class="navbar-item">
-          <a class="button is-light inverted is-rounded" >
-            <!-- <span class="icon"> <i class="fab fa-github"></i> </span> -->
-            <span>选择餐点</span>
-          </a>
-        </span>
+        <a href="index.html" class="navbar-item"> 首页 </a>
+        <a href="info.html" class="navbar-item"> 时间地点 </a>
+        <a href="menu.html" class="navbar-item"> 选择菜单 </a>
+        <a href="seat.html" class="navbar-item"> 座位图 </a>
       </div>
     </div>
   </nav>
@@ -51,6 +44,7 @@
         <p class="subtitle is-6" style="opacity:0.7">
           这是一场发布会，发布我们， 十年的爱情。
         </p>
+
         <a href="menu.html" class="button is-dark is-rounded">选择餐点</a>
         <br/> <br/> <br/>
         <br/> <br/> <br/>
@@ -58,23 +52,5 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section class="hero is-fullheight-with-navbar" style="background:url('bg2.png');background-size:cover;background-position:center">
-    <div class="container has-text-centered">
-      <br/> <br/>
-      <p class="title is-5" style="opacity:0.8">
-        Aress & Ssera
-      </p>
-      <h1 class="title is-1" style="letter-spacing: 10px;line-height:50px;font-weight:900">
-        03/16/19
-      </h1>
-      <p class="title is-5" style="opacity:0.8">
-        下午17时30分
-      </p>
-      <p class="title is-5" style="opacity:0.8">
-        上海市黄浦区外马路1162号
-      </p>
-    </div>
-  </section>
   </body>
 </html>
