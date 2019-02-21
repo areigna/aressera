@@ -191,8 +191,18 @@
           <br/>
         </div>
 
+        <!-- Contact -->
+        <div id="contact" class="content hidden">
+          <div class="field">
+            <label> 联系电话 </label>
+            <input name="contact" class="input" type="number" placeholder="输入手机号">
+            <p class="is-size-7" style="margin-top:10px;opacity:0.4"> 用于接收婚礼当天座位，停车等信息。 </p>
+          </div>
+          <br/>
+        </div>
+
         <!-- Special -->
-        <div id="special" class="content off">
+        <div id="special" class="content hidden">
           <div class="field">
             <label> 特殊要求(选填) </label>
             <input name="special" class="input" type="text" placeholder="如携带小孩，老人，特殊餐具等。">
@@ -220,6 +230,7 @@
         document.getElementById('form' + i).className = 'content ' + (i > n ? 'hidden' : '');
       }
       document.getElementById('special').className = 'content';
+      document.getElementById('contact').className = 'content';
       document.getElementById('submit').className = 'content';
     }
 
